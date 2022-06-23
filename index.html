@@ -42,7 +42,7 @@
                         <img class="h-8 w-auto sm:h-10" src="usm.webp" alt="">
                     </a>
                 </div>
-                <div>2 Premades 1 Cup</div>
+                <h1 class="text-2xl font-bold">2 Premades 1 Cup</h1>
                 <div x-data="{open: false}" class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
                     <button type="button" @click="open=!open">
                         <span class="dark:hidden">
@@ -71,7 +71,8 @@
                     </button>
                     <ul x-show="open" @click.outside="open=false"
                         class="absolute z-50 top-full right-0 bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-0 dark:highlight-white/5 dark:text-slate-300">
-                        <li @click="changeTheme('light')" class="py-1 px-2 flex items-center cursor-pointer">
+                        <li id="theme-light" @click="changeTheme('light')"
+                            class="py-1 px-2 flex items-center cursor-pointer">
                             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="w-6 h-6 mr-2">
                                 <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
@@ -82,7 +83,8 @@
                             </svg>
                             Claro
                         </li>
-                        <li @click="changeTheme('dark')" class="py-1 px-2 flex items-center cursor-pointer">
+                        <li id="theme-dark" @click="changeTheme('dark')"
+                            class="py-1 px-2 flex items-center cursor-pointer">
                             <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 mr-2">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"
@@ -96,8 +98,8 @@
                             </svg>
                             Oscuro
                         </li>
-                        <li @click="changeTheme('system')"
-                            class="py-1 px-2 flex items-center cursor-pointer text-sky-500">
+                        <li id="theme-system" @click="changeTheme('system')"
+                            class="py-1 px-2 flex items-center cursor-pointer">
                             <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 mr-2">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z"
@@ -110,6 +112,7 @@
                             Sistema
                         </li>
                     </ul>
+
                     <a href="https://www.facebook.com/profile.php?id=100046955563453" target="_blank"
                         rel="noopener noreferrer"
                         class="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300">
@@ -132,17 +135,25 @@
                 <script>
                     function changeTheme(theme) {
                         if (theme === 'light') {
+                            document.getElementById("theme-light").classList.add("text-sky-500");
+                            document.getElementById("theme-dark").classList.remove("text-sky-500");
+                            document.getElementById("theme-system").classList.remove("text-sky-500");
                             localStorage.theme = 'light';
                             document.documentElement.classList.remove('dark');
                         } else if (theme === 'dark') {
+                            document.getElementById("theme-light").classList.remove("text-sky-500");
+                            document.getElementById("theme-dark").classList.add("text-sky-500");
+                            document.getElementById("theme-system").classList.remove("text-sky-500");
                             localStorage.theme = 'dark';
                             document.documentElement.classList.add('dark');
                         } else if (theme === 'system') {
+                            localStorage.removeItem('theme');
+                            document.getElementById("theme-light").classList.remove("text-sky-500");
+                            document.getElementById("theme-dark").classList.remove("text-sky-500");
+                            document.getElementById("theme-system").classList.add("text-sky-500");
                             if (window.matchMedia('(prefers-color-scheme: dark)')) {
-                                localStorage.theme = 'dark';
                                 document.documentElement.classList.add('dark');
                             } else {
-                                localStorage.theme = 'light';
                                 document.documentElement.classList.remove('dark');
                             }
                         }
@@ -152,23 +163,59 @@
         </div>
     </div>
     <div>
-        <div>
-            ¡Gracias!, formas parte de la primera edición de 2 PREMADES 1 CUP, eso quiere
-            decir que te follarás a USM en reiteradas ocasiones. Agradecemos infinitamente tu
-            compromiso, esperamos las reglas sean sencillas y si no lo son, una disculpa, lo
-            redactó la Lic. Añañin (Mery_Bros) y es medio mamadora, así que haz tantas
+        <div class="text-center pt-2 pb-4 px-72">
+            ¡Gracias!, formas parte de la primera edición de 2 PREMADES 1 CUP, eso quiere decir que te follarás a USM en
+            reiteradas ocasiones. Agradecemos infinitamente tu compromiso, esperamos las reglas sean sencillas y si no
+            lo son, una disculpa, lo redactó la Lic. Añañin (Mery_Bros) y es medio mamadora, así que haz tantas
             preguntas como desees. Sin más que decir, esperamos que disfrutes este torneo.
+            <br>
             Sykess se la come y Fernan será expulsado después de que leas las reglas. Te quiere:
+            <br>
             Una Squad Más❤️.
         </div>
-        <div>
-            <a href="index.html">overview</a>
-            <a href="darslai.html">dars lais</a>
-            <a href="monstercrazy.html">monster crazy</a>
-            <a href="sash.html">sash</a>
-            <a href="pcdios.html">pcdios</a>
-            <a href="final.html">final</a>
+
+        <div
+            class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700 mb-5">
+            <ul class="flex flex-wrap -mb-px">
+                <li class="mr-2">
+                    <a href="index.html" aria-current="page"
+                        class="inline-block p-4 text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500">
+                        Overview
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="darslai.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Dars Lai
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="monstercrazy.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Monster Crazy
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="sash.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Sash
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="pcdios.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        PCDios
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="final.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Final
+                    </a>
+                </li>
+            </ul>
         </div>
+
         <div>
             <div class="mb-4">
                 <h1>Reglas sobrevivientes</h1>
