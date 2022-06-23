@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Una Squad Más</title>
-    <link rel="stylesheet" href="css/tailwind.minify.css">
+    <link rel="stylesheet" href="dist/output.css">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
     <script>
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia(
                 '(prefers-color-scheme: dark)').matches)) {
@@ -20,7 +19,7 @@
 </head>
 
 <body class="bg-white dark:bg-slate-900 antialiased text-slate-500 dark:text-slate-400">
-    <div class="sticky top-0 backdrop-blur relative">
+    <div class="sticky top-0 backdrop-blur">
         <div class="mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
                 <div class="flex justify-start sm:w-0 sm:flex-1">
@@ -436,7 +435,7 @@
         </div>
 
         <div
-            class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700 mb-5 overflow-x-auto ">
+            class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700 mb-5">
             <ul class="flex flex-wrap -mb-px">
                 <li class="mr-2">
                     <a href="index.html" aria-current="page"
@@ -479,41 +478,35 @@
 
         <div>
             <div class="mb-4">
-                <h1>Reglas sobrevivientes</h1>
-                <div>
-                    1.- No es válido repetir más de 2 perks, tratándose de las perks generales.
+                <h1 class="text-2xl pb-2">Reglas sobrevivientes</h1>
+                <div class="text-justify leading-loose">
+                    1. No es válido repetir más de 2 perks, tratándose de las perks generales.
                     <br>
-                    2.- En el caso de las perks de agotamiento, no podrá repetirse en más de una ocasión.
-                    ✓ Ejemplo regla 1 y 2: dos Iron Will, sólo un
-                    chungo.
+                    2. En el caso de las perks de agotamiento, no podrá repetirse en más de una ocasión.
                     <br>
-                    3.- Los personajes tampoco podrán ser repetidos, salvo
-                    aquellos sobrevivientes que tengan skins legendarias
-                    que son de un aspecto totalmente diferente.
-                    ✓ Ejemplo regla 3: Jill Valentine y Claire Redfield.
+                    <p class="ml-6">✓ Ejemplo regla 1 y 2: dos Iron Will, sólo un chungo.</p>
+                    3. Los personajes tampoco podrán ser repetidos, salvo aquellos sobrevivientes que tengan skins
+                    legendarias que son de un aspecto totalmente diferente.
                     <br>
-                    4.- Los objetos y addons tendrán como rareza máxima
-                    verde.
+                    <p class="ml-6">✓ Ejemplo regla 3: Jill Valentine y Claire Redfield.</p>
+                    4. Los objetos y addons tendrán como rareza máxima verde.
                     <br>
-                    5.- No podrán repetirse los objetos.
-                    ✓ En los dos supuestos anteriores (4 y 5), quedarán
-                    exentos del cumplimiento, aquellos equipos que
-                    hayan conseguido un “Fernan”.
+                    5. No podrán repetirse los objetos.
                     <br>
-                    6.- Estará prohibido usar Objeto de Obsesión.
+                    <p class="ml-6">
+                        ✓ En los dos supuestos anteriores (4 y 5), quedarán exentos del cumplimiento, aquellos equipos
+                        que hayan conseguido un "Fernan".
+                    </p>
+                    6. Estará prohibido usar Objeto de Obsesión.
                     <br>
-                    7.- En el caso de “Demuestra lo que Vales”, no podrá
-                    repetirse en más de una ocasión.
+                    7. En el caso de “Demuestra lo que Vales”, no podrá repetirse en más de una ocasión.
                     <br>
-                    8.- En el caso de los “Tótems de Bendición”, sólo podrán
-                    ser utilizados uno de cada uno.
-                    ✓ Ejemplo: sólo uno de curación, sólo uno de
-                    exponencial, etc.
+                    8. En el caso de los “Tótems de Bendición”, sólo podrán ser utilizados uno de cada uno.
                     <br>
-                    9.- A partir de la fase “PCDIOS”, la regla que impide que
-                    los survivors jueguen sin repetir sus perks de
-                    agotamiento queda anulada. Sin omitir lo dispuesto en
-                    el art. 1.
+                    <p class="ml-6">✓ Ejemplo: sólo uno de curación, sólo uno de exponencial, etc.</p>
+                    9. A partir de la fase “PCDIOS”, la regla que impide que los survivors jueguen sin repetir
+                    sus
+                    perks de agotamiento queda anulada. Sin omitir lo dispuesto en el art. 1.
                 </div>
             </div>
             <div class="mb-4">
