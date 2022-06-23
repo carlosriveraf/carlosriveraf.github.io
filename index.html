@@ -379,6 +379,15 @@
                                     </select>
                                     <script>
                                         var select = document.getElementById('theme-mobile');
+
+                                        if (localStorage.theme === 'light') {
+                                            select.value = 'light';
+                                        } else if (localStorage.theme === 'dark') {
+                                            select.value = 'dark';
+                                        } else {
+                                            select.value = 'system';
+                                        }
+
                                         var text = select.options[select.selectedIndex].text;
                                         document.getElementById('label-theme-selected-mobile').innerHTML = text;
 
