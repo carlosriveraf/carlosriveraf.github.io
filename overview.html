@@ -444,8 +444,8 @@
                     </a>
                 </li>
                 <li class="mr-2">
-                    <a href="overview.html"
-                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                    <a href="overview.html" aria-current="page"
+                        class="inline-block p-4 text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500">
                         Overview
                     </a>
                 </li>
@@ -468,8 +468,8 @@
                     </a>
                 </li>
                 <li class="mr-2">
-                    <a href="pcdios.html" aria-current="page"
-                        class="inline-block p-4 text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500">
+                    <a href="pcdios.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
                         Fase PCDios
                     </a>
                 </li>
@@ -483,59 +483,63 @@
         </div>
 
         <div>
-            <div>
-                <h1>Killers</h1>
-                <img src="dbdtier.jpg" alt="">
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Casters</h1>
+                <div class="text-justify leading-loose">
+                    Caster 1 - redes
+                    <br>
+                    Caster 2 - redes
+                </div>
             </div>
-            <div>
-                <h1>Moonknight</h1>
-                <table>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Formato</h1>
+                <div class="text-justify leading-loose">
+                    <p class="text-lg font-semibold">Fase Dars Lai</p>
+                    <p class="text-lg font-semibold">Fase Monstercrazy</p>
+                    <p class="text-lg font-semibold">Fase Sash</p>
+                    <p class="text-lg font-semibold">Fase PCDios</p>
+                    <p class="text-lg font-semibold">Fase Final</p>
+                </div>
+            </div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Equipos</h1>
+                <div>
+                    qwe
+                </div>
+            </div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Resultados</h1>
+                <table x-data="{results: []}" x-init="results = await (await fetch('/resultados.json')).json()">
                     <thead>
                         <tr>
-                            <th>Imagen</th>
-                            <th>Team</th>
-                            <th>Puntaje</th>
+                            <th>#</th>
+                            <th>Equipo</th>
+                            <th>Partidos</th>
+                            <th>P. Asesino</th>
+                            <th>P. Sobreviviente</th>
+                            <th>Total</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>img</td>
-                            <td>team 1</td>
-                            <td>puntaje</td>
-                        </tr>
-                        <tr>
-                            <td>img</td>
-                            <td>team 1</td>
-                            <td>puntaje</td>
-                        </tr>
-                    </tbody>
+                    <template x-for="result in results">
+                        <tbody>
+                            <!-- <tr>
+                                <td x-text="user.id"></td>
+                                <td x-text="user.name"></td>
+                                <td x-text="user.username"></td>
+                            </tr>
+                            <td x-text="user.email" colspan="3"></td> -->
+                        </tbody>
+                    </template>
                 </table>
             </div>
-            <div>
-                <h1>GhostRider</h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Imagen</th>
-                            <th>Team</th>
-                            <th>Puntaje</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>img</td>
-                            <td>team 1</td>
-                            <td>puntaje</td>
-                        </tr>
-                        <tr>
-                            <td>img</td>
-                            <td>team 1</td>
-                            <td>puntaje</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Jugadores</h1>
+                <div>
+                    qwe
+                </div>
             </div>
         </div>
+
     </div>
 </body>
 
