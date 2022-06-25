@@ -516,26 +516,26 @@
                         <table class="text-center">
                             <thead class="">
                                 <tr>
-                                    <th scope="col" rowspan="2" class="px-4 border-2 border-slate-500">#</th>
-                                    <th scope="col" rowspan="2" class="px-4 border-2 border-slate-500">Equipo</th>
-                                    <th scope="col" rowspan="2" class="px-4 border-2 border-slate-500">Matches</th>
-                                    <th scope="col" colspan="3" class="px-4 border-2 border-slate-500 py-1">Puntuación</th>
+                                    <th scope="col" rowspan="2" class="px-4 border border-slate-500">#</th>
+                                    <th scope="col" rowspan="2" class="px-4 border border-slate-500">Equipo</th>
+                                    <th scope="col" rowspan="2" class="px-4 border border-slate-500">Matches</th>
+                                    <th scope="col" colspan="3" class="px-4 border border-slate-500 py-1">Puntuación</th>
                                 </tr>
                                 <tr>
-                                    <th scope="col" class="px-2 border-2 border-slate-500 py-1">Asesino</th>
-                                    <th scope="col" class="px-2 border-2 border-slate-500 py-1">Sobreviviente</th>
-                                    <th scope="col" class="px-2 border-2 border-slate-500 py-1">Total</th>
+                                    <th scope="col" class="px-2 border border-slate-500 py-1">Asesino</th>
+                                    <th scope="col" class="px-2 border border-slate-500 py-1">Sobreviviente</th>
+                                    <th scope="col" class="px-2 border border-slate-500 py-1">Total</th>
                                 </tr>
                             </thead>
                             <tbody class="">
                                 <template x-for="result in results" :key="result.id">
                                     <tr>
-                                        <td x-text="result.id" class="px-4 py-2 border-2 border-slate-500"></td>
-                                        <td x-text="result.team" class="text-left px-4 py-2 border-2 border-slate-500"></td>
-                                        <td x-text="result.matches" class="px-4 py-2 border-2 border-slate-500"></td>
-                                        <td x-text="result.killerpoints" class="px-4 py-2 border-2 border-slate-500"></td>
-                                        <td x-text="result.survivorpoints" class="px-4 py-2 border-2 border-slate-500"></td>
-                                        <td x-text="result.killerpoints+result.survivorpoints" class="px-4 py-2 border-2 border-slate-500"></td>
+                                        <td x-text="result.id" class="px-4 py-2 border border-slate-500"></td>
+                                        <td x-text="result.team" class="text-left px-4 py-2 border border-slate-500 whitespace-nowrap"></td>
+                                        <td x-text="result.matches" class="px-4 py-2 border border-slate-500"></td>
+                                        <td x-text="result.killerpoints" class="px-4 py-2 border border-slate-500"></td>
+                                        <td x-text="result.survivorpoints" class="px-4 py-2 border border-slate-500"></td>
+                                        <td x-text="result.killerpoints+result.survivorpoints" class="px-4 py-2 border border-slate-500"></td>
                                     </tr>
                                 </template>
                             </tbody>
