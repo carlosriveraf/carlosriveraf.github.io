@@ -511,76 +511,40 @@
                 .then(response => response.json())
                 .then(data => results = data);">
                 <h1 class="text-2xl pb-2">Resultados</h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Equipo</th>
-                            <th>Partidos</th>
-                            <th>P. Asesino</th>
-                            <th>P. Sobreviviente</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <template x-for="result in results" :key="result.id">
-                        <tbody>
-                            <tr>
-                                <td x-text="result.id"></td>
-                                <td x-text="result.team"></td>
-                                <td x-text="result.matches"></td>
-                                <td x-text="result.killerpoints"></td>
-                                <td x-text="result.survivorpoints"></td>
-                                <td x-text="result.killerpoints+result.survivorpoints"></td>
-                            </tr>
-                        </tbody>
-                    </template>
-                </table>
-            </div>
-            <div>
-                <div class="flex flex-col">
-                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                            <div class="shadow overflow-hidden border-b border-gray-200 ">
-                                <table class="min-w-full divide-y ">
-                                    <thead class="">
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Equipo</th>
-                                            <th scope="col">Matches</th>
-                                            <th scope="col">Asesino</th>
-                                            <th scope="col">Sobreviviente</th>
-                                            <th scope="col">Total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="">
-                                        <tr>
-                                            <td class="">
-                                                qwertyqwertyqwerty
-                                            </td>
-                                            <td class="">
-                                                qwertyqwertyqwerty
-                                            </td>
-                                            <td class="">
-                                                qwertyqwertyqwerty
-                                            </td>
-                                            <td class="">
-                                                qwertyqwertyqwerty
-                                            </td>
-                                            <td class="">
-                                                qwertyqwertyqwerty
-                                            </td>
-                                            <td class="">
-                                                qwertyqwertyqwerty
-                                            </td>
-                                        </tr>
+                <div class="overflow-x-auto">
+                    <div class="py-2 align-middle inline-block">
+                        <table class="text-center">
+                            <thead class="">
+                                <tr>
+                                    <th scope="col" rowspan="2" class="px-4 border-2 border-slate-500">#</th>
+                                    <th scope="col" rowspan="2" class="px-4 border-2 border-slate-500">Equipo</th>
+                                    <th scope="col" rowspan="2" class="px-4 border-2 border-slate-500">Matches</th>
+                                    <th scope="col" colspan="3" class="px-4 border-2 border-slate-500">Puntuación</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col" class="px-2 border-2 border-slate-500">Asesino</th>
+                                    <th scope="col" class="px-2 border-2 border-slate-500">Sobreviviente</th>
+                                    <th scope="col" class="px-2 border-2 border-slate-500">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="">
+                                <template x-for="result in results" :key="result.id">
+                                    <tr>
+                                        <td x-text="result.id" class="px-4 py-2 border-2 border-slate-500"></td>
+                                        <td x-text="result.team" class="text-left px-4 py-2 border-2 border-slate-500"></td>
+                                        <td x-text="result.matches" class="px-4 py-2 border-2 border-slate-500"></td>
+                                        <td x-text="result.killerpoints" class="px-4 py-2 border-2 border-slate-500"></td>
+                                        <td x-text="result.survivorpoints" class="px-4 py-2 border-2 border-slate-500"></td>
+                                        <td x-text="result.killerpoints+result.survivorpoints" class="px-4 py-2 border-2 border-slate-500"></td>
+                                    </tr>
+                                </template>
+                            </tbody>
 
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                        </table>
                     </div>
                 </div>
             </div>
+
             <div class="mb-5">
                 <h1 class="text-2xl pb-2">Jugadores</h1>
                 <div>
